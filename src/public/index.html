@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roblox Upload Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">RU</span>
+      <h1>Roblox Upload</h1>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="uploads">Uploads</button>
+      <button class="tab" data-tab="logs">Logs</button>
+    </nav>
+    <div class="db-path" id="dbPath" title="SQLite database path"></div>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="toolbar">
+    <input type="search" id="search" placeholder="Search filename, asset ID, name..." />
+    <select id="statusFilter">
+      <option value="">All statuses</option>
+      <option value="success">Success</option>
+      <option value="failed">Failed</option>
+      <option value="pending">Pending</option>
+    </select>
+    <select id="levelFilter" hidden>
+      <option value="">All levels</option>
+      <option value="info">Info</option>
+      <option value="warn">Warn</option>
+      <option value="error">Error</option>
+    </select>
+    <button id="refresh">Refresh</button>
+  </section>
+
+  <main>
+    <div class="panel" id="uploadsPanel">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>When</th>
+            <th>File</th>
+            <th>Type</th>
+            <th>Asset ID</th>
+            <th>Status</th>
+            <th>Creator</th>
+            <th>Session</th>
+            <th>Took</th>
+          </tr>
+        </thead>
+        <tbody id="uploadsBody"></tbody>
+      </table>
+      <p class="empty" id="uploadsEmpty" hidden>No uploads yet.</p>
+    </div>
+
+    <div class="panel" id="logsPanel" hidden>
+      <table class="data">
+        <thead>
+          <tr>
+            <th>When</th>
+            <th>Level</th>
+            <th>Message</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody id="logsBody"></tbody>
+      </table>
+      <p class="empty" id="logsEmpty" hidden>No logs yet.</p>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

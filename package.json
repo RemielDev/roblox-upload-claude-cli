@@ -1,0 +1,22 @@
+{
+  "name": "roblox-upload",
+  "version": "1.0.0",
+  "description": "Universal Roblox asset uploader with local history dashboard. Wraps Open Cloud Assets API.",
+  "type": "module",
+  "bin": {
+    "roblox-upload": "./bin/roblox-upload.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "dashboard": "node src/cli.js dashboard"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "commander": "^12.1.0",
+    "express": "^4.21.0",
+    "open": "^10.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
