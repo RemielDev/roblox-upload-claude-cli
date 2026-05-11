@@ -1,0 +1,17 @@
+roblox-upload — setup on a new device
+
+  git clone https://github.com/RemielDev/roblox-upload ~/Development/roblox-upload
+  cd ~/Development/roblox-upload
+  npm install
+  npm link
+  roblox-upload setup-claude
+
+Per-session (never stored):
+  $env:ROBLOX_API_KEY = "<your-key>"        # PowerShell
+  export ROBLOX_API_KEY=<your-key>          # bash
+
+Verify:
+  roblox-upload check --creator user:<id>
+
+Get a key: https://create.roblox.com/dashboard/credentials
+  System: Assets — Read + Write — IP allowlisted
